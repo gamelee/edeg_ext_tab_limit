@@ -1,0 +1,19 @@
+{
+  "name": "页签限制器",
+  "version": "2.1",
+  "manifest_version": 2,
+  "description": "关闭多余页签",
+  "icons": {
+    "128": "favicon.ico"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "default.js", "back.js"
+    ]
+  },
+  "permissions": [
+    "tabs", "storage"
+  ],
+  "options_page": "options.html"
+}

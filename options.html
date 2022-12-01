@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<title>Options</title>
+<form name="options" action="#">
+    <div class="item">
+        <label for="max_count">保留数量</label>
+        <input type="number" name="max_count" id="max_count">
+    </div>
+
+    <div class="item">
+        <label for="empty_first">优先移除空标签</label>
+        <input id="empty_first" type="checkbox" name="empty_first">
+    </div>
+
+    <div class="item">
+        <label for="empty_first">标签关闭优先级</label>
+        <span class="radio">
+            <input type="radio" name="mode" value="rnu"> 最少使用
+            <input type="radio" name="mode" value="lf"> 左侧有限
+        </span>
+    </div>
+
+    <div class="item">
+        <label for="debug">调试</label>
+        <input id="debug" type="checkbox" name="debug">
+    </div>
+    <button type="button" id="save_options">保存</button>
+</form>
+<div id="item-list"></div>
+<script type="text/javascript" src="default.js"></script>
+<script type="text/javascript" src="options.js"></script>
