@@ -1,19 +1,20 @@
 {
-  "name": "页签限制器",
-  "version": "2.1",
-  "manifest_version": 2,
+  "name": "__MSG_Name__",
+  "default_locale": "zh_CN",
+  "version": "0.1.1",
+  "manifest_version": 3,
   "description": "关闭多余页签",
   "icons": {
-    "128": "favicon.ico"
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "64": "icons/icon.png",
+    "128": "icons/icon.png"
   },
   "background": {
-    "persistent": false,
-    "scripts": [
-      "default.js", "back.js"
-    ]
+    "service_worker": "back.js"
   },
   "permissions": [
-    "tabs", "storage"
+    "tabs", "storage", "bnbackground"
   ],
   "options_page": "options.html"
 }

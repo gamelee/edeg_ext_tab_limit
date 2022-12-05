@@ -1,6 +1,6 @@
 function save_options() {
     let options = {
-        empty_first: document.options.empty_first.checked,
+        // empty_first: document.options.empty_first.checked,
         debug: document.options.debug.checked,
         max_count: Number(document.options.max_count.value),
         mode: document.options.mode.value,
@@ -10,7 +10,6 @@ function save_options() {
         return
     }
     chrome.storage.sync.set(options, function (items) {
-        // notify("修改成功")
         chrome.extension.getBackgroundPage().refresh_options()
     });
 }
@@ -32,9 +31,14 @@ function notify(msg) {
 
 
 (function () {
-    chrome.storage.sync.get(defaultOptions, function (options) {
+    document.title = chrome.i18n.getMessage("Name")
+    chrome.storage.sync.get({
+        mode: 'rnu', //
+        max_count: 10,
+        debug: false,
+    }, function (options) {
         console.log("config options", options)
-        if (options.empty_first) document.options.empty_first.checked = true
+        // if (options.empty_first) document.options.empty_first.checked = true
         if (options.debug) document.options.debug.checked = true
         document.options.max_count.value = options.max_count
         document.options.mode.value = options.mode
